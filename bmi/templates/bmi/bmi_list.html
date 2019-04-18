@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--//
+        템플릿에서 다루는 변수의 종류
+        object_list : 리스트 페이지
+        object : 글 보기(상세페이지), 수정, 삭제
+    //-->
+    <a href="{% url 'create' %}">추가</a>
+    <table>
+    {% for object in object_list %}
+        <tr>
+            <td><a href="{% url 'detail' object.id %}">{{object.id}}</a></td>
+            <td>{{object.weight}}</td>
+            <td>{{object.height}}</td>
+            <td>{{object.bmi_score}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
